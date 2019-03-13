@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="employees_manager_ver2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="contactemployeeinfo">
+    <Key>
+      <PropertyRef Name="idContact" />
+    </Key>
+    <Property Name="idContact" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="employeeID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="phoneNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ctCity" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ctAddress" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ctPostalCode" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="employeedetail" Relationship="Self.contactemployeeinfo_ibfk_1" FromRole="contactemployeeinfo" ToRole="employeedetail" />
+  </EntityType>
+  <EntityType Name="employeedetail">
+    <Key>
+      <PropertyRef Name="employeeID" />
+    </Key>
+    <Property Name="employeeID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="firstName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="lastName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="dateOfBirth" Type="DateTime" />
+    <NavigationProperty Name="contactemployeeinfoes" Relationship="Self.contactemployeeinfo_ibfk_1" FromRole="employeedetail" ToRole="contactemployeeinfo" />
+    <NavigationProperty Name="qualifications" Relationship="Self.qualification_ibfk_1" FromRole="employeedetail" ToRole="qualification" />
+    <NavigationProperty Name="timeinfoes" Relationship="Self.timeinfo_ibfk_1" FromRole="employeedetail" ToRole="timeinfo" />
+    <NavigationProperty Name="workhistories" Relationship="Self.workhistory_ibfk_1" FromRole="employeedetail" ToRole="workhistory" />
+  </EntityType>
+  <EntityType Name="qualification">
+    <Key>
+      <PropertyRef Name="idQualification" />
+    </Key>
+    <Property Name="idQualification" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="employeeID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="experience" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="employeedetail" Relationship="Self.qualification_ibfk_1" FromRole="qualification" ToRole="employeedetail" />
+  </EntityType>
+  <EntityType Name="salaryinfo">
+    <Key>
+      <PropertyRef Name="idSalaryInfo" />
+    </Key>
+    <Property Name="idSalaryInfo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="employeeID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="monthlySalary" Type="Int32" />
+    <Property Name="moneyCurrency" Type="Int32" />
+    <Property Name="moneyDeductions" Type="Int32" />
+    <Property Name="moneyInsurance" Type="Int32" />
+  </EntityType>
+  <EntityType Name="timeinfo">
+    <Key>
+      <PropertyRef Name="idTime" />
+    </Key>
+    <Property Name="idTime" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="employeeID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="workHours" Type="Int32" />
+    <Property Name="offDay" Type="Int32" />
+    <Property Name="overTime" Type="Int32" />
+    <Property Name="extraday" Type="Int32" />
+    <NavigationProperty Name="employeedetail" Relationship="Self.timeinfo_ibfk_1" FromRole="timeinfo" ToRole="employeedetail" />
+  </EntityType>
+  <EntityType Name="workhistory">
+    <Key>
+      <PropertyRef Name="idWorkHistory" />
+    </Key>
+    <Property Name="idWorkHistory" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="employeeID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="companyName" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="phoneNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="officenumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="employeedetail" Relationship="Self.workhistory_ibfk_1" FromRole="workhistory" ToRole="employeedetail" />
+  </EntityType>
+  <Association Name="contactemployeeinfo_ibfk_1">
+    <End Role="employeedetail" Type="Self.employeedetail" Multiplicity="1" />
+    <End Role="contactemployeeinfo" Type="Self.contactemployeeinfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employeedetail">
+        <PropertyRef Name="employeeID" />
+      </Principal>
+      <Dependent Role="contactemployeeinfo">
+        <PropertyRef Name="employeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="qualification_ibfk_1">
+    <End Role="employeedetail" Type="Self.employeedetail" Multiplicity="1" />
+    <End Role="qualification" Type="Self.qualification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employeedetail">
+        <PropertyRef Name="employeeID" />
+      </Principal>
+      <Dependent Role="qualification">
+        <PropertyRef Name="employeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="timeinfo_ibfk_1">
+    <End Role="employeedetail" Type="Self.employeedetail" Multiplicity="1" />
+    <End Role="timeinfo" Type="Self.timeinfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employeedetail">
+        <PropertyRef Name="employeeID" />
+      </Principal>
+      <Dependent Role="timeinfo">
+        <PropertyRef Name="employeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="workhistory_ibfk_1">
+    <End Role="employeedetail" Type="Self.employeedetail" Multiplicity="1" />
+    <End Role="workhistory" Type="Self.workhistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employeedetail">
+        <PropertyRef Name="employeeID" />
+      </Principal>
+      <Dependent Role="workhistory">
+        <PropertyRef Name="employeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="employees_manager_ver2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="contactemployeeinfoes" EntityType="Self.contactemployeeinfo" />
+    <EntitySet Name="employeedetails" EntityType="Self.employeedetail" />
+    <EntitySet Name="qualifications" EntityType="Self.qualification" />
+    <EntitySet Name="salaryinfoes" EntityType="Self.salaryinfo" />
+    <EntitySet Name="timeinfoes" EntityType="Self.timeinfo" />
+    <EntitySet Name="workhistories" EntityType="Self.workhistory" />
+    <AssociationSet Name="contactemployeeinfo_ibfk_1" Association="Self.contactemployeeinfo_ibfk_1">
+      <End Role="employeedetail" EntitySet="employeedetails" />
+      <End Role="contactemployeeinfo" EntitySet="contactemployeeinfoes" />
+    </AssociationSet>
+    <AssociationSet Name="qualification_ibfk_1" Association="Self.qualification_ibfk_1">
+      <End Role="employeedetail" EntitySet="employeedetails" />
+      <End Role="qualification" EntitySet="qualifications" />
+    </AssociationSet>
+    <AssociationSet Name="timeinfo_ibfk_1" Association="Self.timeinfo_ibfk_1">
+      <End Role="employeedetail" EntitySet="employeedetails" />
+      <End Role="timeinfo" EntitySet="timeinfoes" />
+    </AssociationSet>
+    <AssociationSet Name="workhistory_ibfk_1" Association="Self.workhistory_ibfk_1">
+      <End Role="employeedetail" EntitySet="employeedetails" />
+      <End Role="workhistory" EntitySet="workhistories" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

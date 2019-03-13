@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="employees_manager_ver2ModelStoreContainer" CdmEntityContainer="employees_manager_ver2Entities">
+    <EntitySetMapping Name="contactemployeeinfoes">
+      <EntityTypeMapping TypeName="employees_manager_ver2Model.contactemployeeinfo">
+        <MappingFragment StoreEntitySet="contactemployeeinfo">
+          <ScalarProperty Name="idContact" ColumnName="idContact" />
+          <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="ctCity" ColumnName="ctCity" />
+          <ScalarProperty Name="ctAddress" ColumnName="ctAddress" />
+          <ScalarProperty Name="ctPostalCode" ColumnName="ctPostalCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="employeedetails">
+      <EntityTypeMapping TypeName="employees_manager_ver2Model.employeedetail">
+        <MappingFragment StoreEntitySet="employeedetail">
+          <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="dateOfBirth" ColumnName="dateOfBirth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qualifications">
+      <EntityTypeMapping TypeName="employees_manager_ver2Model.qualification">
+        <MappingFragment StoreEntitySet="qualification">
+          <ScalarProperty Name="idQualification" ColumnName="idQualification" />
+          <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+          <ScalarProperty Name="experience" ColumnName="experience" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="salaryinfoes">
+      <EntityTypeMapping TypeName="employees_manager_ver2Model.salaryinfo">
+        <MappingFragment StoreEntitySet="salaryinfo">
+          <ScalarProperty Name="idSalaryInfo" ColumnName="idSalaryInfo" />
+          <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+          <ScalarProperty Name="monthlySalary" ColumnName="monthlySalary" />
+          <ScalarProperty Name="moneyCurrency" ColumnName="moneyCurrency" />
+          <ScalarProperty Name="moneyDeductions" ColumnName="moneyDeductions" />
+          <ScalarProperty Name="moneyInsurance" ColumnName="moneyInsurance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="timeinfoes">
+      <EntityTypeMapping TypeName="employees_manager_ver2Model.timeinfo">
+        <MappingFragment StoreEntitySet="timeinfo">
+          <ScalarProperty Name="idTime" ColumnName="idTime" />
+          <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+          <ScalarProperty Name="workHours" ColumnName="workHours" />
+          <ScalarProperty Name="offDay" ColumnName="offDay" />
+          <ScalarProperty Name="overTime" ColumnName="overTime" />
+          <ScalarProperty Name="extraday" ColumnName="extraday" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="workhistories">
+      <EntityTypeMapping TypeName="employees_manager_ver2Model.workhistory">
+        <MappingFragment StoreEntitySet="workhistory">
+          <ScalarProperty Name="idWorkHistory" ColumnName="idWorkHistory" />
+          <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+          <ScalarProperty Name="companyName" ColumnName="companyName" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="officenumber" ColumnName="officenumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
