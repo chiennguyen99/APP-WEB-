@@ -1,6 +1,21 @@
+var idGenaral; 
+var listIDcontact; 
+var listIDsalary; 
+var listIDtime; 
+var listIDquanlification; 
+var listIDwork; 
+
 $(document).ready(function () {
     $(".btn-eye").click(function (e) {
         e.preventDefault();
+
+        idGenaral = [];
+        listIDcontact = [];
+        listIDsalary = [];
+        listIDtime = [];
+        listIDquanlification = [];
+        listIDwork = []; 
+
         var id = $(this).parent().parent().attr('id');
         $(".pagination li").removeClass('active');
         $("#page .list-group").hide();
@@ -33,6 +48,7 @@ $(document).ready(function () {
         var emc = dbEmployeeContact.filter(dbEmployeeContact => dbEmployeeContact.employeeID == id); 
         $("#table-contact").html(""); 
         for (var i = 0; i < emc.length; i++){
+            listIDcontact.push(emc[i].idContact); 
             var row = `
             <tr>
                 <th scope="row">`+ (i + 1) +`</th>
@@ -41,8 +57,8 @@ $(document).ready(function () {
                 <td> `+ emc[i].ctAddress +` </td>
                 <td> `+ emc[i].ctPostalCode +` </td>
                 <td>
-                <a href="#editContactEmployeeModal" class="edit" data-toggle="modal"><i
-                    class="fas fa-user-edit"></i></a>
+                <a href="#editContactEmployeeModal" class="edit" onclick="editContactfun(`+ i +`)" data-toggle="modal"><i
+                        class="fas fa-user-edit"></i></a>
                 </td>
             </tr>
             `; 
@@ -52,6 +68,8 @@ $(document).ready(function () {
         var ems = dbEmployeeSalary.filter(dbEmployeeSalary => dbEmployeeSalary.employeeID == id);
         $("#table-salary").html(""); 
         for (var i = 0; i < ems.length; i++){
+            listIDsalary.push(ems[i].idSalaryInfo); 
+
             var row = `
             <tr>
                 <th scope="row"> ` + (i + 1) + `</th>
@@ -60,9 +78,12 @@ $(document).ready(function () {
                 <td>` + ems[i].moneyDeductions + `</td>
                 <td>` + ems[i].moneyInsurance + `</td>
                 <td>
-                    <a href="#editSalaryInfoModal" class="edit" data-toggle="modal"><i
+                    <a href="#editSalaryInfoModal" class="edit" onclick="editSalaryfun(`+ i +`)" data-toggle="modal"><i
                     class="fas fa-user-edit"></i></a>
                 </td>
+                <td>
+                    <a><i class="fas fa-trash"></i></a>
+                </td> 
             </tr>
             `; 
             $("#table-salary").append(row); 
@@ -72,6 +93,7 @@ $(document).ready(function () {
         var emh = dbEmployeeWorkHistory.filter(dbEmployeeWorkHistory => dbEmployeeWorkHistory.employeeID == id);
         $("#table-work").html(""); 
         for (var i = 0; i < emh.length; i++){
+            listIDwork.push(emh[i].idWorkHistory); 
             var row = `
             <tr>
                 <th scope="row"> ` + (i + 1) + `</th>
@@ -80,9 +102,12 @@ $(document).ready(function () {
                 <td>` + emh[i].phoneNumber + `</td>
                 <td>` + emh[i].officenumber + `</td>
                 <td>
-                    <a href="#editWorkHistoryModal" class="edit" data-toggle="modal"><i
+                    <a href="#editWorkHistoryModal" class="edit" onclick="editWorkHistoryfun(`+ i +`)" data-toggle="modal"><i
                     class="fas fa-user-edit"></i></a>
                 </td>
+                <td>
+                    <a><i class="fas fa-trash"></i></a>
+                </td> 
             </tr>
             `; 
             $("#table-work").append(row); 
@@ -91,14 +116,19 @@ $(document).ready(function () {
         var emq = dbEmployeeQualification.filter(dbEmployeeQualification => dbEmployeeQualification.employeeID == id);
         $("#table-qualification").html(""); 
         for (var i = 0; i < emq.length; i++){
+            listIDquanlification.push(emq[i].idQualification); 
+
             var row = `
             <tr>
                 <th scope="row"> ` + (i + 1) + `</th>
                 <td>` + emq[i].experience + `</td>
                 <td>
-                    <a href="#editQualificationModal" class="edit" data-toggle="modal"><i
+                    <a href="#editQualificationModal" class="edit" onclick="editQualificationfun(`+ i +`)" data-toggle="modal"><i
                     class="fas fa-user-edit"></i></a>
                 </td>
+                <td>
+                    <a><i class="fas fa-trash"></i></a>
+                </td> 
             </tr>
             `; 
             $("#table-qualification").append(row); 
@@ -107,6 +137,7 @@ $(document).ready(function () {
         var emt = dbEmployeeTimeInfo.filter(dbEmployeeTimeInfo => dbEmployeeTimeInfo.employeeID == id);
         $("#table-time").html(""); 
         for (var i = 0; i < emt.length; i++){
+            listIDtime.push(emt[i].idTime); 
             var row = `
             <tr>
                 <th scope="row"> ` + (i + 1) + `</th>
@@ -115,13 +146,16 @@ $(document).ready(function () {
                 <td>` + emt[i].overTime + `</td>
                 <td>` + emt[i].extraday + `</td>
                 <td>
-                    <a href="#editTimeinfoModal" class="edit" data-toggle="modal"><i
+                    <a href="#editTimeinfoModal" class="edit" onclick="editTimeinfofun(`+ i +`)" data-toggle="modal"><i
                     class="fas fa-user-edit"></i></a>
                 </td>
+                <td>
+                    <a><i class="fas fa-trash"></i></a>
+                </td> 
             </tr>
             `; 
             $("#table-time").append(row); 
         }
-
+        idGenaral = [id, listIDcontact, listIDsalary, listIDwork, listIDquanlification, listIDtime];
     });
 });

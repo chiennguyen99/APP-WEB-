@@ -113,3 +113,14 @@ function onClickDelete(names) {
     }
     location.reload();
 }
+
+// delete table element 
+
+function deleteContactfun(i) {
+    $.ajax({
+        url: "http://localhost:57824/api/contactemployeeinfoes/" + idGenaral[1][i],
+        type: 'DELETE',
+        async: false
+    });
+    location.reload();
+}

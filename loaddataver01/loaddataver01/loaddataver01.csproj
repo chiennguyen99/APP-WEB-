@@ -175,8 +175,10 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\contactemployeeinfoesController.cs" />
+    <Compile Include="Controllers\employeedetails1Controller.cs" />
     <Compile Include="Controllers\employeedetailsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\loginController.cs" />
     <Compile Include="Controllers\qualificationsController.cs" />
     <Compile Include="Controllers\salaryinfoesController.cs" />
     <Compile Include="Controllers\timeinfoesController.cs" />
@@ -343,6 +345,7 @@
     <Content Include="webfonts\fa-solid-900.ttf" />
     <Content Include="webfonts\fa-solid-900.woff" />
     <Content Include="webfonts\fa-solid-900.woff2" />
+    <Content Include="Views\login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

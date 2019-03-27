@@ -32,8 +32,6 @@ function loaddata(){
                     <td>` + qualification + `</td>
                     <td>` + phone + `</td>
                     <td>
-                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i
-                        class="fas fa-user-edit"></i></a>
                     <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i
                         class="fas fa-user-minus"></i></a>
                     <a data-toggle="modal" class="btn-eye"><i class="fas fa-eye"></i></a>

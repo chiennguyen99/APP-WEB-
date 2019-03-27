@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    // edit detail employee. 
     $("#addsuccess-maintb").click(function (e) { 
         e.preventDefault();
         var id = $("#add-id-maintb").val(); 
@@ -22,4 +23,5 @@ $(document).ready(function () {
             }
         });
     });
+ 
 });

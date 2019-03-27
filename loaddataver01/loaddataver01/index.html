@@ -474,14 +474,14 @@
                                     
                                     <caption>List contact</caption>
                                     <thead>
-                                      <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Phone number</th>
-                                        <th scope="col">City</th>
-                                        <th scope="col">Address</th>
-                                        <th scope="col">Postal code</th>
-                                        <th scope="col">Act</th>
-                                      </tr>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Phone number</th>
+                                            <th scope="col">City</th>
+                                            <th scope="col">Address</th>
+                                            <th scope="col">Postal code</th>
+                                            <th scope="col">Edit</th>
+                                        </tr>
                                     </thead>
                                     <tbody id = "table-contact">
                 
@@ -506,14 +506,15 @@
                                   <table class="table">
                                     <caption>List salary of employee</caption>
                                     <thead>
-                                      <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Monthly salary</th>
-                                        <th scope="col">Money currency</th>
-                                        <th scope="col">Money deductions</th>
-                                        <th scope="col">Money insurance</th>
-                                        <th scope="col">Act</th>
-                                      </tr>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Monthly salary</th>
+                                            <th scope="col">Money currency</th>
+                                            <th scope="col">Money deductions</th>
+                                            <th scope="col">Money insurance</th>
+                                            <th scope="col">Edit</th>
+                                            <th scope="col">Del</th>
+                                        </tr>
                                     </thead>
                                     <tbody id = "table-salary">
                           
@@ -542,14 +543,15 @@
                                   <table class="table">
                                     <caption>List work history of employee</caption>
                                     <thead>
-                                      <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Company name</th>
-                                        <th scope="col">Address</th>
-                                        <th scope="col">Phone number</th>
-                                        <th scope="col">Office number</th>
-                                        <th scope="col">Act</th>
-                                      </tr>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Company name</th>
+                                            <th scope="col">Address</th>
+                                            <th scope="col">Phone number</th>
+                                            <th scope="col">Office number</th>
+                                            <th scope="col">Edit</th>
+                                            <th scope="col">Del</th>
+                                        </tr>
                                     </thead>
                                     <tbody id="table-work">
                                       
@@ -574,11 +576,12 @@
                                 <table class="table">
                                   <caption>List qualification of employee</caption>
                                   <thead>
-                                    <tr>
-                                      <th scope="col">#</th>
-                                      <th scope="col">Exprience</th>
-                                      <th scope="col">Act</th>
-                                    </tr>
+                                      <tr>
+                                          <th scope="col">#</th>
+                                          <th scope="col">Exprience</th>
+                                          <th scope="col">Edit</th>
+                                          <th scope="col">Del</th>
+                                      </tr>
                                   </thead>
                                   <tbody id="table-qualification">
                                     
@@ -603,14 +606,15 @@
                                 <table class="table">
                                   <caption>List time of employee</caption>
                                   <thead>
-                                    <tr>
-                                      <th scope="col">#</th>
-                                      <th scope="col">Work hours</th>
-                                      <th scope="col">Off day</th>
-                                      <th scope="col">Over time</th>
-                                      <th scope="col">Extra day</th>
-                                      <th scope="col">Act</th>
-                                    </tr>
+                                      <tr>
+                                          <th scope="col">#</th>
+                                          <th scope="col">Work hours</th>
+                                          <th scope="col">Off day</th>
+                                          <th scope="col">Over time</th>
+                                          <th scope="col">Extra day</th>
+                                          <th scope="col">Edit</th>
+                                          <th scope="col">Del</th>
+                                      </tr>
                                   </thead>
                                   <tbody id="table-time">
                                     
@@ -788,15 +792,15 @@
 					<div class="modal-body">					
 						<div class="form-group">
 							<label>First Name</label>
-							<input type="email" class="form-control" id="email1" required>
+							<input type="email" class="form-control" id="firstname-fix-detail" required>
 						</div>
 						<div class="form-group">
 							<label>Last Name</label>
-							<input type="email" class="form-control" id="email1" required>
+							<input type="email" class="form-control" id="lastname-fix-detail" required>
 						</div>
 						<div class="form-group">
 							<label>Date of birth</label>
-							<input type="text" class="form-control" id="phone1" required>
+							<input type="date" class="form-control" id="date-fix-detail" required>
 						</div>					
 					</div>
 					<div class="modal-footer">
@@ -820,24 +824,24 @@
 					<div class="modal-body">					
 						<div class="form-group">
 							<label>Phone number</label>
-							<input type="text" class="form-control" id="phone1" required>
+							<input type="text" class="form-control" id="phone-edit-detail" required>
 						</div>
 						<div class="form-group">
 							<label>City</label>
-							<input type="text" class="form-control" id="phone1" required>
-            </div>	
-            <div class="form-group">
+							<input type="text" class="form-control" id="city-edit-detail" required>
+                        </div>	
+                        <div class="form-group">
 							<label>Adress</label>
-							<input type="text" class="form-control" id="phone1" required>
-            </div>
-            <div class="form-group">
+							<input type="text" class="form-control" id="adress-edit-detail" required>
+                        </div>
+                        <div class="form-group">
 							<label>Postal code</label>
-							<input type="text" class="form-control" id="phone1" required>
-            </div>	
+							<input type="text" class="form-control" id="postal-edit-detail" required>
+                        </div>	
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<input type="button" class="btn btn-info" value="Save" onclick="editHandling()" data-dismiss="modal" aria-hidden="true">
+						<input type="button" class="btn btn-info" value="Save" id="edit-contact-employee" data-dismiss="modal" aria-hidden="true">
 					</div>
 				</form>
 			</div>
@@ -857,24 +861,24 @@
 					<div class="modal-body">					
 						<div class="form-group">
 							<label>Monthly salary</label>
-							<input type="text" class="form-control" id="phone1" required>
+							<input type="text" class="form-control" id="monthly-edit-employee" required>
 						</div>
 						<div class="form-group">
 							<label>Money currency</label>
-							<input type="text" class="form-control" id="phone1" required>
-            </div>	
-            <div class="form-group">
+							<input type="text" class="form-control" id="moneyCurren-edit-employee" required>
+                        </div>	
+                        <div class="form-group">
 							<label>Money deductions</label>
-							<input type="text" class="form-control" id="phone1" required>
-            </div>
-            <div class="form-group">
+							<input type="text" class="form-control" id="moneyDeduc-edit-employee" required>
+                        </div>
+                        <div class="form-group">
 							<label>Money insurance</label>
-							<input type="text" class="form-control" id="phone1" required>
-            </div>	
+							<input type="text" class="form-control" id="moneyInsur-edit-employee" required>
+                        </div>	
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<input type="button" class="btn btn-info" value="Save" onclick="editHandling()" data-dismiss="modal" aria-hidden="true">
+						<input type="button" class="btn btn-info" value="Save" id="edit-salary-employee" data-dismiss="modal" aria-hidden="true">
 					</div>
 				</form>
 			</div>
@@ -894,24 +898,24 @@
 					<div class="modal-body">					
 						<div class="form-group">
 							<label>Company name</label>
-							<input type="text" class="form-control" id="phone1" required>
+							<input type="text" class="form-control" id="companyName-edit-employee" required>
 						</div>
 						<div class="form-group">
 							<label>Address</label>
-							<input type="text" class="form-control" id="phone1" required>
-            </div>	
-            <div class="form-group">
+							<input type="text" class="form-control" id="address-edit-employee" required>
+                        </div>	
+                        <div class="form-group">
 							<label>Phone number</label>
-							<input type="text" class="form-control" id="phone1" required>
-            </div>
-            <div class="form-group">
+							<input type="text" class="form-control" id="phone-edit-employee" required>
+                        </div>
+                        <div class="form-group">
 							<label>Office number</label>
-							<input type="text" class="form-control" id="phone1" required>
-            </div>	
+							<input type="text" class="form-control" id="office-edit-employee" required>
+                        </div>	
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<input type="button" class="btn btn-info" value="Save" onclick="editHandling()" data-dismiss="modal" aria-hidden="true">
+						<input type="button" class="btn btn-info" value="Save" id="edit-workHistory-employee" data-dismiss="modal" aria-hidden="true">
 					</div>
 				</form>
 			</div>
@@ -929,24 +933,24 @@
 					<div class="modal-body">					
 						<div class="form-group">
 							<label>Work hours</label>
-							<input type="text" class="form-control" id="phone1" required>
+							<input type="text" class="form-control" id="workhours-edit-employee" required>
 						</div>
 						<div class="form-group">
 							<label>Off day</label>
-							<input type="text" class="form-control" id="phone1" required>
-            </div>	
-            <div class="form-group">
+							<input type="text" class="form-control" id="offDay-edit-employee" required>
+                        </div>	
+                        <div class="form-group">
 							<label>Over time</label>
-							<input type="text" class="form-control" id="phone1" required>
-            </div>
-            <div class="form-group">
+							<input type="text" class="form-control" id="overTime-edit-employee" required>
+                        </div>
+                        <div class="form-group">
 							<label>Extra day</label>
-							<input type="text" class="form-control" id="phone1" required>
-            </div>	
+							<input type="text" class="form-control" id="extraDay-edit-employee" required>
+                        </div>	
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<input type="button" class="btn btn-info" value="Save" onclick="editHandling()" data-dismiss="modal" aria-hidden="true">
+						<input type="button" class="btn btn-info" value="Save" id="timeinfo-edit-employee" data-dismiss="modal" aria-hidden="true">
 					</div>
 				</form>
 			</div>
@@ -966,12 +970,12 @@
 					<div class="modal-body">				
 						<div class="form-group">
 							<label>Exprience</label>
-							<textarea class="form-control" id="address1" required></textarea>
+							<textarea class="form-control" id="exprience-edit-employee" required></textarea>
 						</div>
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<input type="button" class="btn btn-info" value="Save" onclick="editHandling()" data-dismiss="modal" aria-hidden="true">
+						<input type="button" class="btn btn-info" value="Save" id="qualification-edit-employee" data-dismiss="modal" aria-hidden="true">
 					</div>
 				</form>
 			</div>
